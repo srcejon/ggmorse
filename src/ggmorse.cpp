@@ -972,8 +972,10 @@ void GGMorse::decode_float() {
                         } else {
                             if (intervals[j].type == 0 ||
                                 intervals[j].type == 2 ||
-                                intervals[j].type == 3) {
-                                if (auto let = m_impl->alphabet.find(m_impl->curLetter); let != m_impl->alphabet.end()) {
+                                intervals[j].type == 3)
+                            {
+                                auto let = m_impl->alphabet.find(m_impl->curLetter);
+                                if (let != m_impl->alphabet.end()) {
                                     m_impl->rxData.push_back(let->second);
                                     printf("%c", let->second);
                                 } else {
