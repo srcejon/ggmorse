@@ -28,7 +28,10 @@ if (MINGW)
         )
 endif()
 
+set_target_properties(${TARGET} PROPERTIES PUBLIC_HEADER ../include/ggmorse/ggmorse.h)
+
 install(TARGETS ${TARGET}
     LIBRARY DESTINATION lib
     ARCHIVE DESTINATION lib/static
+    PUBLIC_HEADER DESTINATION  include/${PROJECT_NAME}
     )
