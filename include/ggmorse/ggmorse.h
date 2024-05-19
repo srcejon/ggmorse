@@ -101,6 +101,7 @@ public:
     using TxRx        = std::vector<std::uint8_t>;
     using Spectrogram = std::vector<std::vector<float>>;
     using SignalF     = std::vector<float>;
+    using ThresholdF  = std::vector<float>;
 
     using CBWaveformOut = std::function<void(const void * data, uint32_t nBytes)>;
     using CBWaveformInp = std::function<uint32_t(void * data, uint32_t nMaxBytes)>;
@@ -140,6 +141,7 @@ public:
 
     int takeRxData(TxRx & dst);
     int takeSignalF(SignalF & dst);
+    int takeThresholdF(ThresholdF & dst);
     int takeTxWaveformI16(WaveformI16 & dst);
 
     const Statistics & getStatistics() const;

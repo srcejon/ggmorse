@@ -155,6 +155,7 @@ struct GGMorse::Impl {
     TxRx rxData = {};
     TxRx txData = {};
     SignalF signalF = {};
+    ThresholdF thresholdF = {};
     WaveformI16 txWaveformI16 = {};
 
     TxRx outputBlockTmp = {};
@@ -756,6 +757,8 @@ void GGMorse::decode_float() {
         nModes = 1;
     }
 
+    m_impl->thresholdF.push_back(m_impl->statistics.signalThreshold);
+
     for (int mode = 0; mode < nModes; ++mode) {
         if (mode == 1) {
             s0 = std::min(std::max(0.0f, std::round(m_impl->statistics.estimatedSpeed_wpm - 5.0f - 2.0f)), 50.0f);
@@ -1033,6 +1036,14 @@ int GGMorse::takeSignalF(SignalF & dst) {
     if (m_impl->signalF.size() == 0) return 0;
 
     dst = std::move(m_impl->signalF);
+
+    return (int) dst.size();
+}
+
+int GGMorse::takeThresholdF(ThresholdF & dst) {
+    if (m_impl->thresholdF.size() == 0) return 0;
+
+    dst = std::move(m_impl->thresholdF);
 
     return (int) dst.size();
 }
