@@ -28,6 +28,10 @@
 #include <thread>
 #include <vector>
 
+#if defined(_WIN32) && !defined(M_PI)
+#define M_PI 3.14159265358979323846
+#endif
+
 #if defined(IOS) || defined(ANDROID)
 #include "imgui-wrapper/icons_font_awesome.h"
 #endif

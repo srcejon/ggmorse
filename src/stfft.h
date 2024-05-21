@@ -5,6 +5,10 @@
 #include <vector>
 #include <cmath>
 
+#if defined(_WIN32) && !defined(M_PI)
+#define M_PI 3.14159265358979323846
+#endif
+
 struct STFFT {
     void init(
             int sampleRate,

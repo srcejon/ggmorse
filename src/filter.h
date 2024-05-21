@@ -2,6 +2,10 @@
 
 #include <cmath>
 
+#if defined(_WIN32) && !defined(M_PI)
+#define M_PI 3.14159265358979323846
+#endif
+
 #ifndef pi
 #define  pi 3.1415926535897932384626433832795
 #endif
@@ -132,7 +136,7 @@ private:
     float a2;
     float b1;
     float b2;
-    
+
     float xnz1;
     float xnz2;
     float ynz1;

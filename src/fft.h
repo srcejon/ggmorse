@@ -2,6 +2,10 @@
 
 #include <cmath>
 
+#if defined(_WIN32) && !defined(M_PI)
+#define M_PI 3.14159265358979323846
+#endif
+
 // FFT routines taken from https://stackoverflow.com/a/37729648/4039976
 
 constexpr auto kMaxSamplesPerFrame = 1024;
