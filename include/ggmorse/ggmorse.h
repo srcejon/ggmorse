@@ -1,7 +1,7 @@
 #ifndef GGMORSE_H
 #define GGMORSE_H
 
-#ifdef GGMORSE_SHARED
+#ifdef BUILD_SHARED_LIBS
 #    ifdef _WIN32
 #        ifdef GGMORSE_BUILD
 #            define GGMORSE_API __declspec(dllexport)
@@ -81,7 +81,7 @@ extern "C" {
 #include <vector>
 #include <functional>
 
-class GGMorse {
+class GGMORSE_API GGMorse {
 public:
     static constexpr auto kBaseSampleRate = 4000.0f;
     static constexpr auto kDefaultSamplesPerFrame = 128;
