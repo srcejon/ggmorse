@@ -20,6 +20,11 @@ if (BUILD_SHARED_LIBS)
     target_compile_definitions(${TARGET} PUBLIC
         GGMORSE_SHARED
         )
+    if (MSVC)
+        target_compile_definitions(${TARGET} PUBLIC
+            GGMORSE_BUILD
+            )
+    endif()
 endif()
 
 if (MINGW)

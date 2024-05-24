@@ -1,7 +1,7 @@
 #ifndef GGMORSE_H
 #define GGMORSE_H
 
-#ifdef BUILD_SHARED_LIBS
+#ifdef GGMORSE_SHARED
 #    ifdef _WIN32
 #        ifdef GGMORSE_BUILD
 #            define GGMORSE_API __declspec(dllexport)
