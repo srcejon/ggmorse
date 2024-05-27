@@ -1066,8 +1066,8 @@ bool GGMorse::setCharacter(const std::string & s01, char c) {
     {
         if (it->second == c) {
             m_impl->alphabet.erase(it->first);
+            break;
         }
-        break;
     }
 
     m_impl->alphabet[s01] = c;
