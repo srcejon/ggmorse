@@ -1059,8 +1059,7 @@ int GGMorse::takeTxWaveformI16(WaveformI16 & dst) {
 const GGMorse::Statistics & GGMorse::getStatistics() const { return m_impl->statistics; }
 const GGMorse::Spectrogram GGMorse::getSpectrogram() const { return m_impl->stfft.spectrogram(); }
 
-#if !defined(_WIN32)
-bool GGMorse::setCharacter(const std::string & s01, char c) {
+bool GGMorse::setCharacter(const char * s01, char c) {
     // remove old character
     for (TAlphabet::iterator it = m_impl->alphabet.begin(); it != m_impl->alphabet.end(); ++it)
     {
@@ -1074,4 +1073,3 @@ bool GGMorse::setCharacter(const std::string & s01, char c) {
 
     return true;
 }
-#endif

@@ -147,7 +147,6 @@ public:
     const Statistics & getStatistics() const;
     const Spectrogram getSpectrogram() const;
 
-#if !defined(_WIN32)
     // Modify the Morse Code alphabet
     //
     // 0 - dot
@@ -155,8 +154,7 @@ public:
     //
     // For example: setCharacter("01101", 'A') will set the character 'A' to the Morse Code sequence "01101"
     //
-    bool setCharacter(const std::string & s01, char c);
-#endif
+    bool setCharacter(const char * s01, char c);
 
 private:
     void decode_float();
